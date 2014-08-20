@@ -42,4 +42,7 @@ describe Person do
 		expect(person_with_bike.has_bike?).to eq false
 	end
 
+	xit "can't rent a bike if it already has one" do
+	end
+
 end
