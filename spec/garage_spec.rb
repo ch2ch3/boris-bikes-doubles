@@ -2,7 +2,7 @@ require 'garage'
 
 describe Garage do
 
-	let(:bike) { double :bike }
+	let(:bike) { Bike.new }
 	let(:garage) { Garage.new }
 
 	it "can fix bikes" do

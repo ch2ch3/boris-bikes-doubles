@@ -16,7 +16,8 @@ module BikeContainer
 
 	def dock(bike)
 		raise ContainerFullError.new("#{self.class} has no more space.") if full?
-		raise NotBikeError.new("The Person might be pretty cool, but actually not a bike.") if bike.class != Bike
+		raise NotBikeError.new("The Person might be pretty cool, bu
+			t actually not a bike.") if bike.class != Bike
 		bikes << bike
 		nil
 	end

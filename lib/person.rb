@@ -1,3 +1,5 @@
+require_relative 'exceptions'
+
 class Person
 
 	def initialize(bike = nil)
@@ -13,6 +15,7 @@ class Person
 	end
 
 	def rent_bike_from(station)
+		raise GreedyPersonError.new("One bike each you greedy prat!") if has_bike?
 		@bike = station.release_bike
 	end
 

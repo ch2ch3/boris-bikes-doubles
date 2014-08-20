@@ -42,7 +42,8 @@ describe Person do
 		expect(person_with_bike.has_bike?).to eq false
 	end
 
-	xit "can't rent a bike if it already has one" do
+	it "can't rent a bike if it already has one" do
+		expect{person_with_bike.rent_bike_from(station)}.to raise_error(GreedyPersonError)
 	end
 
 end

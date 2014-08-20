@@ -15,3 +15,11 @@ end
 class NotBikeError < StandardError
 	include MyCustomErrors
 end
+
+class GreedyPersonError < StandardError
+	include MyCustomErrors
+end
+
+class LateMateError < StandardError
+	include MyCustomErrors
+end

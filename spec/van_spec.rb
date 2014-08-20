@@ -2,8 +2,8 @@ require 'van'
 
 describe Van do
 
-	let(:broken_bike)    { double :bike, working?: false    }
-	let(:fixed_bike)     { double :bike, working?: true     }
+	let(:broken_bike)    { Bike.new.break! 				    }
+	let(:fixed_bike)     { Bike.new   						}	
 	let(:van) 		     { Van.new                          }
 	let(:van_with_bikes) { Van.new(:bikes => [broken_bike]) }
 	let(:station)        { double :station                  }
