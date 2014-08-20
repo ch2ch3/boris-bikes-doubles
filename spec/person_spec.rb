@@ -3,9 +3,9 @@ require 'person'
 describe Person do
 
 	let(:bike)             { double :bike     }
+	let(:station)          { double :station  }
 	let(:person)           { Person.new       }
 	let(:person_with_bike) { Person.new(bike) }
-	let(:station)          { double :station  }
 
 	it "has no bike" do
 		expect(person).not_to have_bike

@@ -1,3 +1,5 @@
+require_relative 'exceptions'
+
 class DockingStation
 
 	include BikeContainer

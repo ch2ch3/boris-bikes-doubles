@@ -1,5 +1,5 @@
 require 'docking_station'
-require 'Timecop'
+require 'timecop'
 
 describe DockingStation do
 

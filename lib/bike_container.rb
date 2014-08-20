@@ -1,3 +1,5 @@
+require_relative 'exceptions'
+
 module BikeContainer
 
 	DEFAULT_CAPACITY = 20
@@ -14,8 +16,7 @@ module BikeContainer
 
 	def dock(bike)
 		raise ContainerFullError.new("#{self.class} has no more space.") if full?
-		raise NotBikeError.new("The Person might be pretty cool, bu
-			t actually not a bike.") if bike.class != Bike
+		raise NotBikeError.new("The #{bike.class} might be pretty cool, but it's actually not a bike.") if bike.class != Bike
 		bikes << bike
 		nil
 	end
@@ -27,6 +28,10 @@ module BikeContainer
 
 	def full?
 		bikes.count == @capacity
+	end
+
+	def empty?
+		bikes.count == 0
 	end
 
 	def available_bikes
@@ -41,5 +46,12 @@ module BikeContainer
 		bikes = broken_bikes
 		@bikes.keep_if(&IS_WORKING)
 		bikes
-	end	
+	end
+
+	def release_fixed_bikes
+		bikes = available_bikes
+		@bikes.delete_if(&IS_WORKING)
+		bikes
+	end
+
 end

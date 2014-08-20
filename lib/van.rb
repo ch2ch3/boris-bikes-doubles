@@ -3,18 +3,19 @@ class Van
 	include BikeContainer
 
 	def dock_all_broken_bikes_from(station)
-		@bikes.concat( station.release_broken_bikes )
+		bikes.concat( station.release_broken_bikes )
 	end
 
 	def drop_off_broken_bikes_at(garage)
-		release_broken_bikes.each do |broken_bike|
-			garage.dock(broken_bike)
-		end
+		garage.bikes.concat( release_broken_bikes )
 	end
 
 	def dock_all_fixed_bikes_from(garage)
-		garage.release_fixed_bikes.each do |fixed_bike|
-			dock(fixed_bike)
-		end
+		bikes.concat( garage.release_fixed_bikes )
 	end
+
+	def drop_off_fixed_bikes_at(station)
+		station.bikes.concat( release_fixed_bikes )
+	end
+
 end

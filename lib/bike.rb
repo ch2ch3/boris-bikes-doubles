@@ -1,6 +1,6 @@
 class Bike
 
-	attr_reader :serialnumber
+	attr_reader :serial_number
 	attr_accessor :rented_at
 	
 	LETTERS = ('A'..'Z').to_a
@@ -8,17 +8,12 @@ class Bike
 
 	def initialize
 		self.fix!
-		@serialnumber = set_serialnumber
-		@birthtime = Time.now
+		@serial_number = set_serial_number
+		@birth_time = Time.now
 		@rented_at = nil
-		@last_serviced = nil
 	end
 
-	def rented_at=(value)
-		@rented_at = value
-	end	
-
-	def set_serialnumber
+	def set_serial_number
 		(0...3).map { |x| LETTERS.sample }.join + "-" + (0...5).map { |n| NUMBERS.sample }.join
 	end
 
@@ -28,7 +23,7 @@ class Bike
 	end
 
 	def wear_and_tear
-		@working = false if (Time.now - @birthtime) > 63070000
+		@working = false if (Time.now - @birth_time) > 63070000
 	end
 
 	def break!

@@ -12,11 +12,11 @@ describe Bike do
 		end
 
 		it "has a serial number" do
-			expect(bike.serialnumber).to match(/^[A-Z]{3}-\d{5}$/)
+			expect(bike.serial_number).to match(/^[A-Z]{3}-\d{5}$/)
 		end
 
 		it "has a unique serial number" do
-			expect(bike.serialnumber).not_to eq Bike.new.serialnumber
+			expect(bike.serial_number).not_to eq Bike.new.serial_number
 		end
 
 	end
