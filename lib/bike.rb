@@ -9,8 +9,9 @@ class Bike
 	def initialize
 		self.fix!
 		@serialnumber = set_serialnumber
-		# @birthtime = Time.now
+		@birthtime = Time.now
 		@rented_at = nil
+		@last_serviced = nil
 	end
 
 	def rented_at=(value)
@@ -22,12 +23,13 @@ class Bike
 	end
 
 	def working?
+		wear_and_tear
 		@working
 	end
 
-	# def 
-	# 	@working = false if (Time.now - @birthtime) > 86400
-	# end
+	def wear_and_tear
+		@working = false if (Time.now - @birthtime) > 63070000
+	end
 
 	def break!
 		@working = false

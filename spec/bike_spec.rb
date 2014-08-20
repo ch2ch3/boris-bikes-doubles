@@ -1,4 +1,5 @@
 require 'bike'
+require 'timecop'
 
 describe Bike do
 
@@ -36,10 +37,10 @@ describe Bike do
 		expect(bike.rented_at).to eq Time.now.round(0)
 	end
 
-	xit "breaks after 2 years" do
-		Timecop.travel(Time.local(2013,1,1))
+	it "breaks down after 2 years" do
+		Timecop.travel(Time.local(2010))
 		bike = Bike.new
-		Timecop.travel(Time.local(2013,1,3))
+		Timecop.travel(Time.local(2013))
 		expect(bike.working?).to eq false
 	end
 
