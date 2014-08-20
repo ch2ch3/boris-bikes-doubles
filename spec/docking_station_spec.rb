@@ -12,7 +12,8 @@ describe DockingStation do
 	end
 
 	it "has the postal code of its location" do
-		expect(station.postal_code).to match(/([EW](C?)|([NS](W?)))\d{1}/)
+		expect(station.postal_code).to match(/(((N|S)W|(E|W)C)|(^N|^S|^E|^W))\d{1}/)
+		# only catches N, S, E, W, NW, SW, EC, WC
 	end
 
 	it "knows what time the bike is rented out" do
