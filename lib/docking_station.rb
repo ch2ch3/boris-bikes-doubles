@@ -1,4 +1,4 @@
-require_relative 'exceptions'
+require_relative 'bike_container'
 
 class DockingStation
 
