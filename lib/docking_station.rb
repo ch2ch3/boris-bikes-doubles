@@ -13,7 +13,11 @@ class DockingStation
 	end
 
 	def dock(bike)
-		raise LateMateError.new("You're late mate!") if rented_over_half_an_hour?(bike)
+		begin
+			raise LateMateError.new("You're late mate!") if rented_over_half_an_hour?(bike)
+		rescue LateMateError => e
+			puts e.message
+		end
 		super
 	end
 

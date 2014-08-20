@@ -1,5 +1,3 @@
-require_relative 'exceptions'
-
 module BikeContainer
 
 	DEFAULT_CAPACITY = 20
