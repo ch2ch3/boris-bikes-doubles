@@ -7,8 +7,7 @@ class DockingStation
 	HALF_AN_HOUR = 30*60
 
 	def initialize(options = {})
-		@bikes = options.fetch(:bikes, bikes)
-		@capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
+		super
 		@postal_code = options.fetch(:postal_code, "N1")
 	end
 

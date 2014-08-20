@@ -36,4 +36,11 @@ describe Bike do
 		expect(bike.rented_at).to eq Time.now.round(0)
 	end
 
+	xit "breaks after 2 years" do
+		Timecop.travel(Time.local(2013,1,1))
+		bike = Bike.new
+		Timecop.travel(Time.local(2013,1,3))
+		expect(bike.working?).to eq false
+	end
+
 end
