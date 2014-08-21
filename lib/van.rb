@@ -9,7 +9,10 @@ class Van
 	end
 
 	def drop_off_broken_bikes_at(garage)
-		garage.bikes.concat( release_broken_bikes )
+		broken_bikes.each do |broken_bike|
+			bikes.delete(broken_bike)
+			garage.dock(broken_bike)
+		end
 	end
 
 	def dock_all_fixed_bikes_from(garage)
