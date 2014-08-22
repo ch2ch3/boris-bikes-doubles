@@ -2,7 +2,7 @@ require 'bike_container'
 
 class Container; include BikeContainer; end
 
-describe Container do
+shared_examples "a bike container" do
 
 	let(:bike)               { Bike.new 									}
 	let(:broken_bike)        { Bike.new.break!								}

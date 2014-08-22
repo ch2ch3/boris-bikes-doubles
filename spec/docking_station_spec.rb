@@ -1,5 +1,7 @@
 require 'docking_station'
 require 'timecop'
+require 'metadata_spec'
+require 'bike_container_spec'
 
 describe DockingStation do
 
@@ -8,6 +10,7 @@ describe DockingStation do
 	let(:station_with_bike)   { DockingStation.new(:bikes => [bike]) }
 
 	it_behaves_like "a thing"
+	it_behaves_like "a bike container"
 
 	it "has a location" do
 		expect(station.postal_code.nil?).to eq false

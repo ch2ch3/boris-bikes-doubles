@@ -10,7 +10,7 @@ module Metadata
 	end
 
 	def set_serial_number
-		(0...3).map { |x| LETTERS.sample }.join + "-" + (0...5).map { |n| NUMBERS.sample }.join
+		LETTERS.sample(3).join + "-" + NUMBERS.sample(5).join
 	end
 
 end

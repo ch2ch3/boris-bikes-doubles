@@ -1,4 +1,6 @@
 require 'van'
+require 'metadata_spec'
+require 'bike_container_spec'
 
 describe Van do
 
@@ -11,6 +13,7 @@ describe Van do
 	let(:garage)               { double :garage                }
 
 	it_behaves_like "a thing"
+	it_behaves_like "a bike container"
 
 	it 'should ask the station to release all broken bikes' do
 		expect(station).to receive(:release_broken_bikes).and_return([broken_bike])
