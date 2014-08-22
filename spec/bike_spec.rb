@@ -11,14 +11,6 @@ describe Bike do
 			expect(bike).to be_working
 		end
 
-		it "has a serial number" do
-			expect(bike.serial_number).to match(/^[A-Z]{3}-\d{5}$/)
-		end
-
-		it "has a unique serial number" do
-			expect(bike.serial_number).not_to eq Bike.new.serial_number
-		end
-
 	end
 
 	it "can be broken" do

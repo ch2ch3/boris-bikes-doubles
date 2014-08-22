@@ -1,20 +1,12 @@
 class Bike
 
-	attr_reader :serial_number
 	attr_accessor :rented_at
-	
-	LETTERS = ('A'..'Z').to_a
-	NUMBERS = (0..9).to_a
 
 	def initialize
 		self.fix!
-		@serial_number = set_serial_number
 		@birth_time = Time.now
 		@rented_at = nil
-	end
-
-	def set_serial_number
-		(0...3).map { |x| LETTERS.sample }.join + "-" + (0...5).map { |n| NUMBERS.sample }.join
+		super
 	end
 
 	def working?
