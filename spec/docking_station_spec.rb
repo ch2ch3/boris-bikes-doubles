@@ -12,15 +12,6 @@ describe DockingStation do
 	it_behaves_like "a thing"
 	it_behaves_like "a bike container"
 
-	it "has a location" do
-		expect(station.postal_code.nil?).to eq false
-	end
-
-	it "has the postal code of its location" do
-		expect(station.postal_code).to match(/(((N|S)W|(E|W)C)|(^N|^S|^E|^W))\d{1}/)
-		# only matches N, S, E, W, NW, SW, EC, WC
-	end
-
 	it "knows what time the bike is rented out" do
 		station_with_bike.release_bike
 		expect(bike.rented_at).to eq Time.now.round(0)

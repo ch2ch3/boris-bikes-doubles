@@ -13,6 +13,15 @@ shared_examples "a bike container" do
 		20.times { holder.dock(bike) }
 	end
 
+	it "has a location" do
+		expect(holder.postal_code.nil?).to eq false
+	end
+
+	it "has the postal code of its location" do
+		expect(holder.postal_code).to match(/(((N|S)W|(E|W)C)|(^N|^S|^E|^W))\d{1}/)
+		# only matches N, S, E, W, NW, SW, EC, WC
+	end
+
 	it "has no bikes" do
 		expect(holder.bikes).to eq []
 	end
