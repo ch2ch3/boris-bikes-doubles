@@ -23,12 +23,12 @@ describe Van do
 	end
 
 	it 'should drop off broken bikes at the garage' do
-		expect(garage).to receive(:bikes).and_return([])
+		expect(garage).to receive(:dock).with(broken_bike)
 		van_with_broken_bike.drop_off_broken_bikes_at(garage)
 	end
 
 	it "should have no broken bikes after dropping off the last one" do
-		expect(garage).to receive(:bikes).and_return([])
+		expect(garage).to receive(:dock).with(broken_bike)
 		van_with_broken_bike.drop_off_broken_bikes_at(garage)
 		expect(van_with_broken_bike.broken_bikes).to eq []
 	end
