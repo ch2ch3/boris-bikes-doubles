@@ -1,11 +1,14 @@
 require 'bike'
 require 'timecop'
+require 'metadata_spec'
 
 describe Bike do
 
 	let(:bike) { Bike.new }
 
 	context "at initialisation" do
+
+		it_behaves_like "a thing"
 
 		it "works" do
 			expect(bike).to be_working

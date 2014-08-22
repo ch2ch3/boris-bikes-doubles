@@ -2,7 +2,7 @@ require 'metadata'
 
 class Thing; include Metadata; end
 
-describe Thing do
+shared_examples "a thing" do
 
 	let(:thing) { Thing.new }
 

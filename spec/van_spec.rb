@@ -10,6 +10,8 @@ describe Van do
 	let(:station)              { double :station               }
 	let(:garage)               { double :garage                }
 
+	it_behaves_like "a thing"
+
 	it 'should ask the station to release all broken bikes' do
 		expect(station).to receive(:release_broken_bikes).and_return([broken_bike])
 		van.dock_all_broken_bikes_from(station)

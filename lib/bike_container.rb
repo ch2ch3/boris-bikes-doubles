@@ -1,13 +1,20 @@
 require_relative 'exceptions'
+require_relative 'metadata'
 
 module BikeContainer
+
+	include Metadata
 
 	DEFAULT_CAPACITY = 20
 	IS_WORKING = ->(bike) { bike.working? }
 
+	attr_accessor :postal_code
+
 	def initialize(options = {})
 		@bikes = options.fetch(:bikes, bikes)
 		@capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
+		@postal_code = options.fetch(:postal_code, "N1")
+		super
 	end
 
 	def bikes

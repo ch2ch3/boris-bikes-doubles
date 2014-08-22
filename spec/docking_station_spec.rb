@@ -7,6 +7,8 @@ describe DockingStation do
 	let(:station)             { DockingStation.new 				     }
 	let(:station_with_bike)   { DockingStation.new(:bikes => [bike]) }
 
+	it_behaves_like "a thing"
+
 	it "has a location" do
 		expect(station.postal_code.nil?).to eq false
 	end

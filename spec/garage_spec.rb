@@ -1,9 +1,12 @@
 require 'garage'
+require 'metadata_spec'
 
 describe Garage do
 
 	let(:bike)   { Bike.new   }
 	let(:garage) { Garage.new }
+
+	it_behaves_like "a thing"
 
 	it "can fix bikes" do
 		garage.dock(bike)

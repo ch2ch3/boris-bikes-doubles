@@ -4,14 +4,7 @@ class DockingStation
 
 	include BikeContainer
 
-	attr_accessor :postal_code
-
 	HALF_AN_HOUR = 30*60
-
-	def initialize(options = {})
-		super
-		@postal_code = options.fetch(:postal_code, "N1")
-	end
 
 	def dock(bike)
 		begin

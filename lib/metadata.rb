@@ -5,7 +5,7 @@ module Metadata
 	LETTERS = ('A'..'Z').to_a
 	NUMBERS = (0..9).to_a
 
-	def initialize
+	def initialize(options = {})
 		@serial_number = set_serial_number
 	end
 

@@ -1,4 +1,8 @@
+require_relative 'metadata'
+
 class Bike
+
+	include Metadata
 
 	attr_accessor :rented_at
 
