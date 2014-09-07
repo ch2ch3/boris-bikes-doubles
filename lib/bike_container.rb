@@ -37,10 +37,6 @@ module BikeContainer
 		bikes.count == @capacity
 	end
 
-	def empty?
-		bikes.count == 0
-	end
-
 	def available_bikes
 		bikes.select(&IS_WORKING)
 	end
