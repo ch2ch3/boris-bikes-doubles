@@ -4,8 +4,8 @@ require 'bike_container_spec'
 
 describe Van do
 
-	let(:broken_bike)          { Bike.new.break!               }
-	let(:fixed_bike)           { Bike.new.break!.fix!          }	
+	let(:broken_bike)          { double :bike, working?: false }
+	let(:fixed_bike)           { double :bike, working?: true  }	
 	let(:van) 		           { Van.new                       }
 	let(:van_with_broken_bike) { Van.new(bikes: [broken_bike]) }
 	let(:van_with_fixed_bike)  { Van.new(bikes: [fixed_bike])  }
@@ -23,7 +23,6 @@ describe Van do
 	it 'should have broken bikes after collecting them' do
 		allow(station).to receive(:release_broken_bikes).and_return([broken_bike])
 		van.dock_all_broken_bikes_from(station)
-		expect(broken_bike).to receive(:working?).and_return(false)
 		expect(van.broken_bikes).to eq [broken_bike]
 	end
 

@@ -4,8 +4,8 @@ class Container; include BikeContainer; end
 
 shared_examples "a bike container" do
 
-	let(:bike)               { Bike.new 									}
-	let(:broken_bike)        { Bike.new.break!								}
+	let(:bike)               { double :bike, working?: true, class: Bike    }
+	let(:broken_bike)        { double :bike, working?: false, class: Bike   }
 	let(:holder)             { Container.new   						        }
 	let(:holder_with_bikes)  { Container.new(:bikes => [bike, broken_bike]) }
 
